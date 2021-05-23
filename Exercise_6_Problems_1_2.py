@@ -18,6 +18,12 @@ data = None
 
 # YOUR CODE HERE 1
 fp='data/1091402.txt'
+data=pd.read_csv(
+  fp,
+  skiprows=[1],
+  delim_whitespace=True,
+  na_values=[-9999]
+)
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
