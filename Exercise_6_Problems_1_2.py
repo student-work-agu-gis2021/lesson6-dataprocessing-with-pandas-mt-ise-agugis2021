@@ -18,7 +18,7 @@ data = None
 
 # YOUR CODE HERE 1
 #The file path
-fp='data/1091402.txt'
+fp=r'data/1091402.txt'
 #Read the data file
 data=pd.read_csv(
   fp,
@@ -120,7 +120,7 @@ avg_temp_1969 = None
 
 # YOUR CODE HERE 8
 #Calculate the average of data
-avg_temp_1969=data['TMAX'].loc[(data['DATE']>=19690501)&(data['DATA']<19690901)].mean()
+avg_temp_1969=data['TMAX'].loc[(data['DATE']>=19690501)&(data['DATE']<19690901)].mean()
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
 print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
@@ -142,7 +142,7 @@ data['TAVG']=data['TAVG'].apply(fahr_to_celsius)
 #Create the DataFrame()
 monthly_data=pd.DataFrame()
 #Change to string type
-data['TIME_STR']=data['DATA'].astype(str)
+data['TIME_STR']=data['DATE'].astype(str)
 data['YEAR']=data['TIME_STR'].str.slice(start=0,stop=4)
 data['MONTH']=data['TIME_STR'].str.slice(start=4,stop=6)
 #Grouped by 'YEAR' and 'MONTH'
