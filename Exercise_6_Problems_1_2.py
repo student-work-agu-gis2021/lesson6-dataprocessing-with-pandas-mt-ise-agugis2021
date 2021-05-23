@@ -119,7 +119,8 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
-
+#Calculate the average of data
+avg_temp_1969=data['TMAX'].loc[(data['DATE']>=19690501)&(data['DATA']<19690901)].mean()
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
 print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
