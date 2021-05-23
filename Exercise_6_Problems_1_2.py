@@ -122,7 +122,9 @@ print('Average temperature (F) for the Summer of 69:', round(avg_temp_1969, 2))
 monthly_data = None
 
 # YOUR CODE HERE 9
-
+def fahf_to_celsius(temp_fahrenheit):
+  converted_temp=(temp_fahrenheit-32)/1.8
+  return converted_temp
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print the length of variable monthly_data
 print(len(monthly_data))
