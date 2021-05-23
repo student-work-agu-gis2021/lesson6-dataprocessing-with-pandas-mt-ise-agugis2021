@@ -17,11 +17,15 @@ import numpy as np
 data = None
 
 # YOUR CODE HERE 1
+#The file path
 fp='data/1091402.txt'
+#Read the data file
 data=pd.read_csv(
   fp,
   skiprows=[1],
+  #Skip the second row
   delim_whitespace=True,
+  #'-9999' into 'NaN'
   na_values=[-9999]
 )
 # ### Part 2 
@@ -33,6 +37,7 @@ data=pd.read_csv(
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
+#Confirm the existence of the value
 tavg_nodata_count=data['TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
@@ -46,6 +51,7 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 
 tmin_nodata_count = None
 #YOUR CODE HERE 3
+#Confirm the existence of the value
 tmin_nodata_count=data['TMIN'].isnull().sum()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -58,6 +64,7 @@ print('Number of no-data values in column "TMIN":', tmin_nodata_count)
 
 day_count = None 
 #YOUR CODE HERE 4
+#Check the length of data
 day_count=len(data['DATA'])
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -71,6 +78,7 @@ print("Number of days:", day_count)
 first_obs = None
  
 # YOUR CODE HERE 5
+#Find the date first observation
 first_obs=data.loc[0,'DATE']
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -83,6 +91,7 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
+#Find the date of last observation
 last_obs=data.loc[day_count-1,'DATE']
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -96,6 +105,7 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
+#Calculate the average temperature
 avg_temp=data['TAVG'].mean()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
